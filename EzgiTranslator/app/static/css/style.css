@@ -1,0 +1,25 @@
+:root{
+    --bg:#0b0d10; --panel:#0f1318; --text:#e6edf3; --muted:#98a6b7; --line:#2b3645; --accent:#7aa2f7;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto}
+  body{background:linear-gradient(180deg,#0a0c10, #0b0d10 20%, #0b0d10 100%);color:var(--text)}
+  .wrap{max-width:1000px;margin:0 auto;padding:24px}
+  header{margin-bottom:12px}
+  h1{margin:0 0 6px;font-size:28px}
+  p{margin:0;color:var(--muted)}
+  .controls{display:flex;justify-content:space-between;align-items:center;margin:16px 0}
+  .selects{display:flex;gap:12px}
+  label{display:flex;flex-direction:column;font-size:13px;color:var(--muted)}
+  select{margin-top:6px;background:var(--panel);border:1px solid var(--line);color:var(--text);padding:8px;border-radius:10px}
+  .toggles{display:flex;align-items:center;gap:12px}
+  button{background:var(--panel);border:1px solid var(--line);color:var(--text);border-radius:12px;padding:10px 14px;cursor:pointer}
+  button:hover{border-color:var(--accent)}
+  main{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px;box-shadow:0 10px 24px rgba(0,0,0,.25)}
+  .panes{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  textarea{height:260px;background:#0c1015;border:1px solid var(--line);color:var(--text);border-radius:12px;padding:12px;resize:vertical}
+  textarea:focus{outline:none;border-color:var(--accent)}
+  .actions{display:flex;gap:10px;margin-top:12px}
+  footer{margin-top:14px;color:var(--muted);font-size:12px;display:flex;justify-content:flex-end}
+  @media (max-width:800px){ .panes{grid-template-columns:1fr} }
+  

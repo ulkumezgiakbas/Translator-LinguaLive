@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LinguaLive — Real-Time Translator</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>LinguaLive</h1>
+      <p>Live translator</p>
+    </header>
+
+    <section class="controls">
+      <div class="selects">
+        <label>Kaynak
+          <select id="source">
+            {% for code, name in supported %}
+              <option value="{{ code }}" {% if code=='auto' %}selected{% endif %}>{{ name }}</option>
+            {% endfor %}
+          </select>
+        </label>
+        <label>Hedef
+          <select id="target">
+            {% for code, name in supported %}
+              <option value="{{ code }}" {% if code=='en' %}selected{% endif %}>{{ name }}</option>
+            {% endfor %}
+          </select>
+        </label>
+      </div>
+      <div class="toggles">
+        <label><input type="checkbox" id="realtime" checked> Gerçek zamanlı</label>
+        <button id="speak">Oku</button>
+      </div>
+    </section>
+
+    <main>
+      <div class="panes">
+        <textarea id="input" placeholder="Metni yaz… (Ctrl+Enter ile çevir)"></textarea>
+        <textarea id="output" placeholder="Çeviri burada" readonly></textarea>
+      </div>
+      <div class="actions">
+        <button id="translateBtn">Çevir</button>
+        <button id="copyBtn">Kopyala</button>
+        <button id="clearBtn">Temizle</button>
+      </div>
+    </main>
+
+    <footer>
+      <span>Made by Ezgi Akbaş with Flask · WebSocket · LibreTranslate</span>
+    </footer>
+  </div>
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
